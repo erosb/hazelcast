@@ -1,0 +1,194 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema",
+  "type": "object",
+  "properties": {
+    "hazelcast": {
+      "type": "object",
+      "properties": {
+        "import": {
+          "$ref": "#/definitions/Import"
+        },
+        "config-replacers": {
+          "$ref": "#/definitions/ConfigReplacers"
+        },
+        "cluster-name": {
+          "type": "string"
+        },
+        "license-key": {
+          "type": "string"
+        },
+        "management-center": {
+          "$ref": "#/definitions/ManagementCenter"
+        },
+        "properties": {
+          "type": "object"
+        },
+        "wan-replication": {
+          "$ref": "#/definitions/WanReplication"
+        },
+        "network": {
+          "$ref": "TODO"
+        },
+        "partition-group": {
+          "$ref": "PartitionGroup"
+        },
+        "executor-service": {
+          "$ref": "TODO"
+        },
+        "durable-executor-service": {
+          "$ref": "TODO"
+        },
+        "scheduled-executor-service": {
+          "$ref": "TODO"
+        },
+        "cardinality-estimator": {
+          "$ref": "TODO"
+        },
+        "queue": {
+          "$ref": "TODO"
+        },
+        "map": {
+          "$ref": "TODO"
+        },
+        "multimap": {
+          "$ref": "TODO"
+        },
+        "replicatedmap": {
+          "$ref": "TODO"
+        },
+        "cache": {
+          "$ref": "TODO"
+        },
+        "list": {
+          "$ref": "TODO"
+        },
+        "set": {
+          "$ref": "TODO"
+        },
+        "topic": {
+          "$ref": "TODO"
+        },
+        "reliable-topic": {
+          "$ref": "TODO"
+        },
+        "ringbuffer": {
+          "$ref": "TODO"
+        },
+        "flake-id-generator": {
+          "$ref": "TODO"
+        },
+        "listeners": {
+          "$ref": "TODO"
+        },
+        "serialization": {
+          "$ref": "TODO"
+        },
+        "native-memory": {
+          "$ref": "TODO"
+        },
+        "security": {
+          "$ref": "TODO"
+        },
+        "member-attributes": {
+          "$ref": "TODO"
+        },
+        "split-brain-protection": {
+          "$ref": "TODO"
+        },
+        "lite-member": {
+          "$ref": "TODO"
+        },
+        "hot-restart-persistence": {
+          "$ref": "TODO"
+        },
+        "user-code-deployment": {
+          "$ref": "TODO"
+        },
+        "crdt-replication": {
+          "$ref": "TODO"
+        },
+        "pn-counter": {
+          "$ref": "TODO"
+        },
+        "advanced-network": {
+          "$ref": "TODO"
+        },
+        "cp-subsystem": {
+          "$ref": "TODO"
+        },
+        "metrics": {
+          "$ref": "TODO"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Import": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ConfigReplacers": {
+      "type": "object",
+      "properties": {
+        "fail-if-value-missing": {
+          "type": "boolean",
+          "default": false
+        },
+        "replacers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "class-name": {
+                "type": "string"
+              },
+              "properties": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ManagementCenter": {
+      "type": "object",
+      "properties": {
+        "scripting-enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "trusted-interfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "WanReplication": false,
+    "PartitionGroup": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "group-type": {
+          "enum": ["HOST_AWARE", "CUSTOM", "PER_MEMBER", "ZONE_AWARE", "SPI"],
+          "default": "PER_MEMBER"
+        },
+        "member-group": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
